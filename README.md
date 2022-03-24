@@ -1,23 +1,14 @@
-## Micronaut 3.4.0 Documentation
+#docker image used :
+https://hub.docker.com/r/oracleinanutshell/oracle-xe-11g
 
-- [User Guide](https://docs.micronaut.io/3.4.0/guide/index.html)
-- [API Reference](https://docs.micronaut.io/3.4.0/api/index.html)
-- [Configuration Reference](https://docs.micronaut.io/3.4.0/guide/configurationreference.html)
-- [Micronaut Guides](https://guides.micronaut.io/index.html)
----
+#DDL
+src\main\resources\ddl.sql
 
-## Feature jdbc-hikari documentation
+#endpoint :
+http://localhost:8080/person
 
-- [Micronaut Hikari JDBC Connection Pool documentation](https://micronaut-projects.github.io/micronaut-sql/latest/guide/index.html#jdbc)
+#produced error :
+"Internal Server Error: SQL Error executing Query: ORA-00972: identifier is too long\n"
 
-
-## Feature http-client documentation
-
-- [Micronaut HTTP Client documentation](https://docs.micronaut.io/latest/guide/index.html#httpClient)
-
-
-## Feature testcontainers documentation
-
-- [https://www.testcontainers.org/](https://www.testcontainers.org/)
-
-
+#problematic SQL :
+SELECT P."ID",P."NAME",P."AGE",P."ADDRESS_ID",a."VERY_LONG_COLUMN_NAME_30_CHARS" AS avery_long_column_name_30_chars,a."ANOTHER_VERY_LONG_COLUMN_NAME" AS aanother_very_long_column_name FROM "PERSON" P LEFT JOIN "ADDRESS" a ON P."ADDRESS_ID"=a."ID"

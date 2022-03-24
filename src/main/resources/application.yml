@@ -3,7 +3,7 @@ micronaut:
     name: joinOracleProblem
 datasources:
   default:
-    url: jdbc:oracle:thin:@localhost:1521/xe
+    url: jdbc:oracle:thin:@localhost:49161/XE
     driverClassName: oracle.jdbc.OracleDriver
     username: system
     password: oracle
