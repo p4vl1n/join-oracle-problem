@@ -1,0 +1,13 @@
+micronaut:
+  application:
+    name: joinOracleProblem
+datasources:
+  default:
+    url: jdbc:oracle:thin:@localhost:1521/xe
+    driverClassName: oracle.jdbc.OracleDriver
+    username: system
+    password: oracle
+netty:
+  default:
+    allocator:
+      max-order: 3
